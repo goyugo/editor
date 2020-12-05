@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="account_inherit" inherit_id="portal.portal_my_details" name="Account Inherit Website">
+        <!--        <xpath expr="//select[@name='country_id']/.." position="replace">-->
+        <!--        </xpath>-->
+<!--        <xpath expr="//select[@name='country_id']/.." position="after">-->
+        <xpath expr="//select[@name='country_id']/.." position="after">
+            <div t-attf-class="form-group col-xl-6">
+                <label class="col-form-label" for="name">Age</label>
+                <input type="text" name="age" t-attf-class="form-control" t-att-value="age or partner.age"/>
+            </div>
+        </xpath>
+
+        <xpath expr="//label[@for='name']" position="replace">
+            <label class="col-form-label" for="second_inheritence">Second Inheritance</label>
+        </xpath>
+    </template>
+
+
+    <template id="portal_my_home_inherit" inherit_id="portal.portal_my_home" name="Portal My Home Inherit Website">
+        <xpath expr="//h3" position="after">
+            <h3>Hello from the second template inheritence</h3>
+        </xpath>
+    </template>
+</odoo>

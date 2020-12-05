@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="display_car_with_full_description" name="Car With Full Description">
+        <t t-call="website.layout">
+            <div class="container">
+                <h2>
+                    <t t-esc="car.name"/>
+                </h2>
+
+                   <img t-attf-src="data:image/*;base64, {{car.file}}"  style="margin-bottom: 20px;"/>
+
+                 <section>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="bd-example" data-example-id="">
+                                <div id="accordion" role="tablist" aria-multiselectable="true" style="margin-bottom: 30px;">
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="headingThree">
+                                            <div class="mb-0">
+                                                <a data-toggle="collapse" data-parent="#accordion"
+                                                   href="#collapseThree"
+                                                   aria-expanded="false" aria-controls="collapseOne"
+                                                   class="collapsed">
+                                                    <h3>Technical Characteristics</h3>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" role="tabpanel"
+                                             aria-labelledby="headingThree" aria-expanded="false">
+                                            <div class="card-block">
+                                                <div>
+                                                    <span>
+                                                        <strong>Engine name</strong>
+                                                    </span>
+                                                    <span t-field="car.engine_name"/>
+                                                </div>
+                                                <div>
+                                                    <span>
+                                                        <strong>Architecture</strong>
+                                                    </span>
+                                                    <span t-field="car.architect"/>
+                                                </div>
+                                                <div>
+                                                    <span>
+                                                        <strong>Engine layout</strong>
+                                                    </span>
+                                                     <span t-field="car.engine_layout"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="headingOne">
+                                            <div class="mb-0">
+                                                <a data-toggle="collapse" data-parent="#accordion"
+                                                   href="#collapseFour"
+                                                   aria-expanded="false" aria-controls="collapseOne"
+                                                   class="collapsed">
+                                                    <h3>Performances</h3>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div id="collapseFour" class="collapse" role="tabpanel"
+                                             aria-labelledby="headingOne" aria-expanded="false" style="">
+                                            <div class="card-block">
+                                                <div>
+                                                    <span>
+                                                        <strong>Maximum speed</strong>
+                                                    </span>
+                                                     <span t-field="car.maximum_speed"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="headingTwo">
+                                            <div class="mb-0">
+                                                <a data-toggle="collapse" data-parent="#accordion"
+                                                   href="#collapseFive"
+                                                   aria-expanded="false" aria-controls="collapseOne"
+                                                   class="collapsed">
+                                                    <h3>Dimensions and Weight</h3>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div id="collapseFive" class="collapse" role="tabpanel"
+                                             aria-labelledby="headingTwo" aria-expanded="false">
+                                            <div class="card-block">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                                                terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+                                                skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="headingThree">
+                                            <div class="mb-0">
+                                                <a data-toggle="collapse" data-parent="#accordion"
+                                                   href="#collapseSix"
+                                                   aria-expanded="false" aria-controls="collapseOne"
+                                                   class="collapsed">
+                                                    <h3>Standard Equipment</h3>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div id="collapseSix" class="collapse" role="tabpanel"
+                                             aria-labelledby="headingThree" aria-expanded="false">
+                                            <div class="card-block">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                                                terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+                                                skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+        </t>
+    </template>
+</odoo>

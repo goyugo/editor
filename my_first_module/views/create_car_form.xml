@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="create_car_form" name="Cars">
+        <t t-call="website.layout">
+            <div class="container">
+
+                <h2>Car Form</h2>
+                <form action="/create" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <label for="name" class="col-sm-12 col-form-label">Name</label>
+                            <input type="text" class="form-control" name="name"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <label for="doors_number" class="col-sm-12 col-form-label">Doors number</label>
+                            <input type="number" class="form-control" name="doors_number"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <label for="horse_power" class="col-sm-12 col-form-label">Horse power</label>
+                            <input type="number" class="form-control" name="horse_power"/>
+                        </div>
+                    </div>
+
+                    <t t-set="partners" t-value="request.env['res.partner'].search([])"/>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <label for="horse_power" class="col-sm-12 col-form-label">Driver</label>
+                            <select class="form-control" name="driver" size="1">
+                                <t t-foreach="partners" t-as="partner">
+                                    <option t-att-value="partner.id">
+                                        <t t-esc="partner.name"/>
+                                    </option>
+                                </t>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <label for="horse_power" class="col-sm-12 col-form-label">Car Type</label>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="is_sport" value="is_sport"/>
+                                <span class="form-check-label" for="is_sport">Is sport</span>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="is_truck" value="is_truck"/>
+                                <span class="form-check-label" for="is_sport">Is Truck</span>
+                            </div>
+                        </div>
+                    </div>
+
+                         <div class="form-group row">
+                        <div class="col-sm-10">
+                            <label for="horse_power" class="col-sm-12 col-form-label">Start Date</label>
+
+                            <input type="date" class="form-control" name="start_date"/>
+
+                        </div>
+                         </div>
+                       <div class="form-group row">
+                        <div class="col-sm-10">
+
+                              <label for="file" class="col-sm-12 col-form-label">File</label>
+                            <input type="file" name="file" accept="image/*,application/pdf"/>
+
+                        </div>
+                       </div>
+
+
+
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </t>
+    </template>
+</odoo>

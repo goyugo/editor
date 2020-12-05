@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="website_assets_inherit" inherit_id="website.assets_frontend" name="Assets Inherit Website">
+
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/my_first_module/static/src/css/car.css"/>
+            <script type="text/javascript" src="/my_first_module/static/src/js/car.js"/>
+        </xpath>
+    </template>
+
+</odoo>

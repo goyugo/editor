@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="car_form_view" model="ir.ui.view">
+        <field name="name">Cars</field>
+        <field name="model">car.car</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="doors_number"/>
+                            <field name="horse_power"/>
+                            <field name="driver"/>
+                            <field name="is_sport"/>
+                            <field name="is_truck"/>
+                            <field name="start_date"/>
+                            <field name="file"/>
+                            <field name="description"/>
+                        </group>
+
+
+                    </group>
+                    <notebook>
+                        <page string="Technical Characteristics">
+                            <group>
+                                <group>
+                                    <field name="engine_name"/>
+                                    <field name="architect"/>
+                                    <field name="engine_layout"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Performances">
+                            <group>
+                                <group>
+                                    <field name="maximum_speed"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Dimensions and Weight"></page>
+                        <page string="Standard Equipment"></page>
+
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="car_tree_view" model="ir.ui.view">
+        <field name="name">Cars</field>
+        <field name="model">car.car</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="doors_number"/>
+                <field name="horse_power"/>
+                <field name="driver"/>
+                <field name="is_sport"/>
+                <field name="is_truck"/>
+                <field name="start_date"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_car" model="ir.actions.act_window">
+        <field name="name">Cars</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">car.car</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="car_menu" name="Cars" action="action_car"/>
+
+
+</odoo>

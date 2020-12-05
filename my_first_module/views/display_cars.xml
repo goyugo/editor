@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="display_cars" name="Cars">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1 class="car_title">Cars  <i class="fa fa-car"/></h1>
+
+                <p id="message_cars">You find here all your cars</p>
+
+             <a href="/cars/create"><i class="fa fa-plus-circle"/>Add new Car</a>
+                <br/>
+                <br/>
+                <table border="1" width="800" class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Horse power</th>
+                            <th>doors_number</th>
+                            <th>Driver</th>
+                            <th>Start Date</th>
+                            <th>
+                           Update
+
+                            </th>
+                            <th>
+                           Delete
+
+                            </th>
+                        </tr>
+                    </thead>
+                    <t t-foreach="cars" t-as="car">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <t t-esc="car.name"/>
+                                </td>
+                                <td>
+                                    <t t-esc="car.doors_number"/>
+                                </td>
+                                <td>
+                                    <t t-esc="car.horse_power"/>
+                                </td>
+
+                                <td>
+                                    <t t-esc="car.driver.name"/>
+                                </td>
+
+                                  <td>
+                                    <t t-esc="car.start_date"/>
+                                </td>
+
+                                <td>
+
+
+                                  <a t-attf-href="/update?id=#{car.id}"><i class="fa fa-pencil"/></a>
+                                </td>
+
+                                  <td>
+
+
+                                  <a t-attf-href="/delete?id=#{car.id}"><i class="fa fa-trash"/></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </t>
+                </table>
+
+
+            </div>
+
+
+        </t>
+
+    </template>
+</odoo>
